@@ -7,6 +7,10 @@ pub trait IntoConflictValueClause {
     fn into_value_clause(self) -> Self::ValueClause;
 }
 
+#[cfg(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes")]
+#[derive(Debug, Clone, Copy)]
+pub struct OnConflictSelectWrapper<S>(pub S);
+#[cfg(not(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes"))]
 #[derive(Debug, Clone, Copy)]
 pub struct OnConflictSelectWrapper<S>(pub(crate) S);
 
