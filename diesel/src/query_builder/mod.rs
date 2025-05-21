@@ -124,6 +124,12 @@ pub(crate) use self::select_statement::BoxedSelectStatement;
 #[doc(inline)]
 pub(crate) use self::select_statement::SelectStatement;
 
+#[diesel_derives::__diesel_public_if(
+    feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes"
+)]
+#[doc(inline)]
+pub(crate) use self::select_statement::boxed::BoxedQueryHelper;
+
 pub(crate) use self::insert_statement::ColumnList;
 
 #[cfg(feature = "postgres_backend")]
