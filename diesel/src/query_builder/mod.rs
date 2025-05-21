@@ -57,6 +57,9 @@ pub use self::sql_query::{BoxedSqlQuery, SqlQuery};
 #[doc(inline)]
 pub use self::upsert::on_conflict_target_decorations::DecoratableTarget;
 
+#[cfg(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes")]
+pub use self::upsert::into_conflict_clause::OnConflictSelectWrapper;
+
 #[doc(inline)]
 pub use self::update_statement::changeset::AsChangeset;
 #[doc(inline)]
