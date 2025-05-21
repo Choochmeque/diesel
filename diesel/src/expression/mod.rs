@@ -30,7 +30,10 @@ pub(crate) mod count;
 pub(crate) mod exists;
 #[cfg(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes")]
 pub mod exists;
+#[cfg(not(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes"))]
 pub(crate) mod grouped;
+#[cfg(feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes")]
+pub mod grouped;
 pub(crate) mod helper_types;
 mod not;
 pub(crate) mod nullable;
