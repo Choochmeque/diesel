@@ -130,6 +130,12 @@ pub(crate) use self::select_statement::SelectStatement;
 #[doc(inline)]
 pub(crate) use self::select_statement::boxed::BoxedQueryHelper;
 
+#[diesel_derives::__diesel_public_if(
+    feature = "i-implement-a-third-party-backend-and-opt-into-breaking-changes"
+)]
+#[doc(inline)]
+pub(crate) use self::where_clause::{BoxedWhereClause, WhereClause};
+
 pub(crate) use self::insert_statement::ColumnList;
 
 #[cfg(feature = "postgres_backend")]
